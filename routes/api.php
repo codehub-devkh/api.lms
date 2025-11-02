@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StatusController;
 use Illuminate\Http\Request;
@@ -26,4 +27,12 @@ Route::prefix('v2')->group(function () {
         Route::put('/{id}', [StatusController::class, 'update']);
         Route::delete('/{id}', [StatusController::class, 'destroy']);
     });
+    Route::prefix('categories')->group(function () {
+        Route::post('/', [CategoryController::class, 'store']);
+        Route::get('/', [CategoryController::class, 'index']);
+        Route::get('/{id}', [CategoryController::class, 'show']);
+        Route::put('/{id}', [CategoryController::class, 'update']);
+        Route::delete('/{id}', [CategoryController::class, 'destroy']);
+    });
+
 });
