@@ -34,5 +34,7 @@ Route::prefix('v2')->group(function () {
         Route::put('/{id}', [CategoryController::class, 'update']);
         Route::delete('/{id}', [CategoryController::class, 'destroy']);
     });
-
+    Route::prefix('books')->group(function () {
+        
+    });
 });
